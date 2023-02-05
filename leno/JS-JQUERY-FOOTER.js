@@ -1262,7 +1262,22 @@ jQuery(document).ready(function( $ ){
     }
     
   
-   
+   //Desabilitar Parcelas difusas
+    $( "input[type=checkbox]" ).each(function(){
+        if( $(this).parent().parent().find('td.column-5').text().includes("+")){
+             $(this).attr("disabled",true);
+             }
+    });
   
+                            
+    const d = new Date();
+    let dataImovel = d.getDate()+"/"+(d.getMonth()+1)+"/"+d.getFullYear()+" as "+d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
+    let dataVeiculo = d.getDate()+"/"+(d.getMonth()+1)+"/"+d.getFullYear()+" as "+d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
+    
+    $("#tablepress-12_info").text($("#tablepress-12_info").text()+" | Ultima atualização em "+dataVeiculo);
+    $("#tablepress-15_info").text($("#tablepress-15_info").text()+" | Ultima atualização em "+dataImovel);
   
 });
+      
+      
+     
